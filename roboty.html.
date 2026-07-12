@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Приклади наших робіт — Memoria Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0a0603;
+    --ink-2: #241806;
+    --line: #6b5116;
+    --gold: #ffb627;
+    --gold-soft: #ffd75e;
+    --cream: #fffaf0;
+    --cream-dim: #e7dcc0;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #0a0603; }
+  body { background: var(--ink); color: var(--cream); font-family: var(--sans);
+    line-height: 1.7; min-height: 100vh; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: min(1160px, 92vw); margin: 0 auto; }
+  .eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold); }
+  .serif { font-family: var(--serif); font-weight: 500; line-height: 1.1; }
+
+  header { position: sticky; top: 0; z-index: 20; background: rgba(10,6,3,0.96);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 1.05rem 0; }
+  .brand { display: flex; align-items: baseline; gap: 0.55rem; }
+  .brand b { font-family: var(--serif); font-weight: 600; font-size: 1.28rem; color: var(--cream); }
+  .brand span { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cream-dim); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 0.86rem; color: var(--cream-dim); }
+  .nav-links a:hover { color: var(--gold); }
+  .btn { font-size: 0.85rem; font-weight: 600; padding: 0.66rem 1.35rem; border-radius: 2px;
+    border: 1px solid var(--gold); color: #1a1000; display: inline-block;
+    background: linear-gradient(135deg, #ffd75e, #ffb627 60%, #e5a015);
+    box-shadow: 0 4px 20px rgba(255,182,39,0.3); }
+
+  .page-head { padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 4vw, 3rem); text-align: center; }
+  .page-head h1 { font-size: clamp(2.2rem, 5.5vw, 3.8rem); color: var(--cream); margin: 1rem 0; }
+  .page-head h1 em { font-style: italic; color: var(--gold-soft); }
+  .page-head p { color: var(--cream-dim); max-width: 36rem; margin: 0 auto; }
+
+  section.gal { padding: 0 0 clamp(3rem, 6vw, 5rem); }
+  .gal-title { font-family: var(--serif); font-size: 1.7rem; color: var(--gold-soft);
+    margin: 2.6rem 0 1.4rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+
+  .item { position: relative; border: 2px solid var(--gold); border-radius: 4px;
+    overflow: hidden; background: var(--ink-2); transition: transform 0.25s;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(255,182,39,0.10); }
+  .item:hover { transform: translateY(-4px); }
+  .item img, .item video { display: block; width: 100%; height: auto; }
+  .item figcaption { padding: 0.9rem 1.1rem; font-size: 0.92rem; color: var(--cream-dim);
+    border-top: 1px solid var(--line); }
+  .tag { position: absolute; top: 0.8rem; left: 0.8rem; z-index: 3; font-size: 0.62rem;
+    letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+    padding: 0.32rem 0.75rem; border-radius: 2px; color: #1a1000;
+    background: linear-gradient(135deg, #ffd75e, #ffb627); }
+
+  .slot { display: grid; place-items: center; text-align: center; min-height: 220px;
+    border: 2px dashed var(--line); border-radius: 4px; color: var(--cream-dim);
+    padding: 1.5rem; font-size: 0.9rem; }
+  .slot b { display: block; color: var(--gold); font-size: 1.6rem; margin-bottom: 0.4rem; }
+
+  .cta { text-align: center; padding: clamp(3rem, 6vw, 5rem) 0; border-top: 1px solid var(--line); }
+  .cta h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); color: var(--cream); margin: 0.8rem 0 1.2rem; }
+  .phone { display: inline-block; font-family: var(--serif); font-weight: 700;
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem); color: var(--gold-soft); margin-bottom: 1.6rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 2.2rem 0; background: var(--ink); }
+  .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .foot small { color: var(--cream-dim); font-size: 0.8rem; }
+
+  @media (max-width: 780px) {
+    .grid, .grid.three { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><b>Memoria</b><span>studio</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Головна</a>
+      <a href="index.html#prices">Ціни</a>
+      <a href="roboty.html">Наші роботи</a>
+    </nav>
+    <a class="btn" href="https://www.facebook.com/profile.php?id=61574310673217" target="_blank" rel="noopener">Надіслати фото</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-head">
+    <p class="eyebrow">Портфоліо</p>
+    <h1 class="serif">Приклади <em>наших робіт</em></h1>
+    <p>Кожна світлина — чиясь історія, яку ми повернули до життя.</p>
+  </div>
+
+  <section class="gal">
+    <div class="wrap">
+
+      <h2 class="gal-title">Реставрація фотографій</h2>
+      <div class="grid">
+
+        <!-- ЗРАЗОК: копіюй цей блок для кожного нового фото -->
+        <figure class="item">
+          <span class="tag">До / Після</span>
+          <img src="restoration-1.jpeg" alt="Реставрація весільної фотографії" loading="lazy" />
+          <figcaption>Весільна світлина 1930-х. Відновлено тріщини, залами та колір.</figcaption>
+        </figure>
+
+        <div class="slot">
+          <b>+</b>
+          Місце для фото.<br />Завантаж файл і встав блок за зразком.
+        </div>
+
+      </div>
+
+      <h2 class="gal-title">Оживлення фотографій</h2>
+      <div class="grid three">
+
+        <!-- ЗРАЗОК ВІДЕО:
+        <figure class="item">
+          <span class="tag">Відео</span>
+          <video src="video-1.mp4" controls playsinline preload="metadata"></video>
+          <figcaption>Оживлення портрета.</figcaption>
+        </figure>
+        -->
+
+        <div class="slot"><b>+</b>Місце для відео</div>
+        <div class="slot"><b>+</b>Місце для відео</div>
+        <div class="slot"><b>+</b>Місце для відео</div>
+
+      </div>
+
+      <h2 class="gal-title">Родинні відеоспогади</h2>
+      <div class="grid">
+        <div class="slot"><b>+</b>Місце для ролика</div>
+        <div class="slot"><b>+</b>Місце для ролика</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <p class="eyebrow">Хочете так само?</p>
+      <h2 class="serif">Надішліть свою світлину</h2>
+      <a class="phone" href="tel:+380986322160">+38 098 632 21 60</a><br />
+      <a class="btn" href="https://www.facebook.com/profile.php?id=61574310673217" target="_blank" rel="noopener">Написати у Facebook</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><b>Memoria</b><span>studio</span></a>
+    <a href="tel:+380986322160" style="color:#ffd75e;font-weight:600;font-size:0.95rem">+38 098 632 21 60</a>
+    <small>&copy; 2026 Memoria Studio · Фотомайстерня спогадів</small>
+  </div>
+</footer>
+
+</body>
+</html>
